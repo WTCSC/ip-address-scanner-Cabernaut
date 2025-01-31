@@ -1,2 +1,46 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/cYbEVSqo)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=17967378)
+Overview
+
+This Python script scans a network range specified in CIDR notation and reports the status of each host. It uses the ping command to check if hosts are up or down and provides a summary of the scan results.
+
+Features
+
+Takes a CIDR notation input (e.g., 192.168.1.0/24)
+
+Calculates the network range based on the subnet mask
+
+Iterates over all valid host addresses in the range
+
+Reports which IP addresses successfully respond to ping requests
+
+Displays response time in milliseconds
+
+Provides a summary of active, down, and error hosts
+
+Requirements
+
+Python 3.x
+
+ipaddress module (built-in with Python 3.3+)
+
+Installation
+
+No additional dependencies are required beyond Python. Simply clone this repository and run the script.
+
+Usage
+
+To scan a network, use the following command:
+
+python ip_scanner.py 192.168.1.0/24
+
+Example output:
+
+Scanning network 192.168.1.0/24...
+
+192.168.1.1   - UP   (2ms)
+192.168.1.2   - DOWN (No response)
+192.168.1.3   - UP   (5ms)
+192.168.1.4   - UP   (3ms)
+192.168.1.5   - ERROR (Connection timeout)
+...
+
+Scan complete. Found 3 active hosts, 1 down, 1 error.
